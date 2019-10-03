@@ -12,7 +12,7 @@ for k=1:n
     dataRoi = [];
     for i=1:N
         check = data{i}.position(:,1)>roi(k,1) & data{i}.position(:,2)>roi(k,2) & data{i}.position(:,1)<(roi(k,1)+K*px) & data{i}.position(:,2)<(roi(k,2)+K*px);
-        dataRoi = [dataRoi; data{i}.position(check,:)];
+        dataRoi = [dataRoi; data{i}.position(check,:) i*ones(sum(check),1)];
     end
     output{k} = dataRoi;
 end
