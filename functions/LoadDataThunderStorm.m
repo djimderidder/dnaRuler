@@ -1,9 +1,11 @@
 function [data] = LoadDataThunderStorm(nameData)
 %Loading data processed with FIJI plugin ThunderStorm
-%   data{i}.x x positions of found spots for frame i
-%   data{i}.y y positions of found spots for frame i
+%   data{i}.position(:,1) x positions of found spots for frame i
+%   data{i}.position(:,2) y positions of found spots for frame i
+%---load data---
 load(nameData);
 rawData = table2array(rawData);
+%---put data in structure---
 N = max(rawData(:,1));
 for i=1:N
     indexTemp = find(rawData(:,1)==i);

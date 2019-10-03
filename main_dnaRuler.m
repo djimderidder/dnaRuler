@@ -10,4 +10,5 @@ config.imageSize = 255;
 data = LoadDataThunderStorm(config.nameData);
 
 %---find ROI---
-roi = MakeRoi(data{1}.position,conifg);
+roi = MakeRoi(data{1}.position,config);
+dataRoi = DataInRoi(roi,data,config);
